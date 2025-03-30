@@ -8,25 +8,47 @@
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
-    <header class="bg-white shadow-md top-0 left-0 w-full z-50">
+       <!-- Header -->
+       <header class="bg-white shadow-md top-0 left-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
+                
                 <!-- Logo -->
-                <a href="{{ route('promotions.index') }}" class="text-2xl font-bold text-blue-600">
+                <a href="{{ route('promotions.index') }}" class="text-2xl font-bold text-blue-600 text-decoration-none">
                     MyPromo
                 </a>
 
+                <!-- Tombol Hamburger untuk Mobile -->
+                <button id="menu-toggle" class="lg:hidden md:hidden sm:hidden text-gray-700 focus:outline-none space-x-4">
+                    ☰
+                </button>
+
                 <!-- Navigation -->
                 <nav>
-                    <ul class="flex space-x-4">
-                        <li><a href="{{ route('promotions.index') }}" class="text-gray-700 hover:text-blue-500">Home</a></li>
-                        <li><a href="{{ route('promotions.create') }}" class="text-gray-700 hover:text-blue-500">Tambah Promosi</a></li>
-                        <li><a href="{{ route('promotions.edit') }}" class="text-gray-700 hover:text-blue-500">Edit</a></li>
+                    <ul id="nav-menu" class="hidden lg:flex md:flex sm:flex space-x-4 mt-2">
+                    <li><a href="{{ route('promotions.index') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Home</a></li>
+                        <li><a href="{{ route('promotions.create') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Tambah Promosi</a></li>
+                        <li><a href="{{ route('promotions.edit') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Edit</a></li>
                     </ul>
                 </nav>
             </div>
+
+            <!-- Dropdown untuk Mobile -->
+            <div id="dropdown-menu" class="hidden lg:hidden flex flex-col space-y-2 p-4 bg-white shadow-md">
+                <a href="{{ route('promotions.index') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Home</a>
+                <a href="{{ route('promotions.create') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Tambah Promosi</a>
+                <a href="{{ route('promotions.edit') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Edit</a>
+            </div>
         </div>
     </header>
+
+    <!-- Script untuk Toggle Menu -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            let dropdown = document.getElementById('dropdown-menu');
+            dropdown.classList.toggle('hidden');
+        });
+    </script>
 
     @if (session('success'))
         <div id="success-modal" class="fixed top-10 left-1/2 transform -translate-x-1/2 p-4 rounded-lg max-w-sm shadow-lg border border-gray-300 transition-opacity duration-300 ease-in-out opacity-100"

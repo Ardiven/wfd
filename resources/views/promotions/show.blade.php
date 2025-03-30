@@ -14,18 +14,6 @@
 
         <div class="flex justify-between items-center">
             <a href="{{ route('promotions.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Kembali</a>
-
-            <div>
-                <a href="{{ route('promotions.edit', $promotion) }}" class="bg-yellow-500 text-white px-4 py-2 rounded mr-2 hover:bg-yellow-600">Edit</a>
-
-                <form action="{{ route('promotions.destroy', $promotion) }}" method="POST" class="inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" onclick="return confirm('Yakin ingin menghapus promosi ini?')" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">
-                        Hapus
-                    </button>
-                </form>
-            </div>
         </div>
     </div>
 @endsection

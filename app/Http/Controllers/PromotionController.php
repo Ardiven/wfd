@@ -55,6 +55,10 @@ class PromotionController extends Controller
     {
         return view('promotions.show', compact('promotion'));
     }
+    public function editpage(Promotion $promotion)
+    {
+        return view('promotions.editpage', compact('promotion'));
+    }
 
     // public function edit(Promotion $promotion)
     // {

@@ -23,7 +23,7 @@
 @else
     <ul class="mt-4">
         @foreach($promotions as $promotion)
-        <div onclick="window.location='{{ route('promotions.show', $promotion) }}';" 
+        <div onclick="window.location='{{ route('promotions.editpage', $promotion) }}';" 
     class="cursor-pointer border-b py-2 flex justify-between items-center hover:bg-gray-100 transition">
     
     <!-- Tulisan (Kiri) -->
