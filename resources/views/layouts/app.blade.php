@@ -21,7 +21,7 @@
                     <ul class="flex space-x-4">
                         <li><a href="{{ route('promotions.index') }}" class="text-gray-700 hover:text-blue-500">Home</a></li>
                         <li><a href="{{ route('promotions.create') }}" class="text-gray-700 hover:text-blue-500">Tambah Promosi</a></li>
-                        <li><a href="#" class="text-gray-700 hover:text-blue-500">Tentang</a></li>
+                        <li><a href="{{ route('promotions.edit') }}" class="text-gray-700 hover:text-blue-500">Edit</a></li>
                     </ul>
                 </nav>
             </div>

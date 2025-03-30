@@ -12,6 +12,17 @@ class PromotionController extends Controller
         $promotions = Promotion::all();
         return view('promotions.index', compact('promotions'));
     }
+    public function edit(Request $request)
+    {
+        $query = $request->input('query'); // Ambil input pencarian dari form
+
+        $promotions = Promotion::where('title', 'like', "%$query%")
+                            ->orWhere('description', 'like', "%$query%")
+                            ->get();
+
+        return view('promotions.edit', compact('promotions'));
+    }
+
 
     public function create()
     {
@@ -45,10 +56,10 @@ class PromotionController extends Controller
         return view('promotions.show', compact('promotion'));
     }
 
-    public function edit(Promotion $promotion)
-    {
-        return view('promotions.edit', compact('promotion'));
-    }
+    // public function edit(Promotion $promotion)
+    // {
+    //     return view('promotions.edit', compact('promotion'));
+    // }
 
     public function update(Request $request, Promotion $promotion)
     {
