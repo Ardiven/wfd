@@ -8,7 +8,7 @@
 </head>
 <body class="bg-gray-100">
     <!-- Header -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md top-0 left-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
