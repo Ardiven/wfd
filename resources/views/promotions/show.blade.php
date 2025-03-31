@@ -13,7 +13,7 @@
         <p class="text-gray-600 mb-4">{{ $promotion->description }}</p>
 
         <div class="flex justify-between items-center">
-            <a href="{{ route('promotions.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Kembali</a>
+            <a href="{{ route('promotions.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-decoration-none">Kembali</a>
         </div>
     </div>
 @endsection

@@ -28,7 +28,7 @@
                     <ul id="nav-menu" class="hidden lg:flex md:flex sm:flex space-x-4 mt-2">
                     <li><a href="{{ route('promotions.index') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Home</a></li>
                         <li><a href="{{ route('promotions.create') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Tambah Promosi</a></li>
-                        <li><a href="{{ route('promotions.edit') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Edit</a></li>
+                        <li><a href="{{ route('promotions.editpage') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Edit</a></li>
                     </ul>
                 </nav>
             </div>
@@ -37,7 +37,7 @@
             <div id="dropdown-menu" class="hidden lg:hidden flex flex-col space-y-2 p-4 bg-white shadow-md">
                 <a href="{{ route('promotions.index') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Home</a>
                 <a href="{{ route('promotions.create') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Tambah Promosi</a>
-                <a href="{{ route('promotions.edit') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Edit</a>
+                <a href="{{ route('promotions.editpage') }}" class="text-gray-700 hover:text-blue-500 text-decoration-none">Edit</a>
             </div>
         </div>
     </header>

@@ -12,7 +12,7 @@ class PromotionController extends Controller
         $promotions = Promotion::all();
         return view('promotions.index', compact('promotions'));
     }
-    public function edit(Request $request)
+    public function editpage(Request $request)
     {
         $query = $request->input('query'); // Ambil input pencarian dari form
 
@@ -20,7 +20,7 @@ class PromotionController extends Controller
                             ->orWhere('description', 'like', "%$query%")
                             ->get();
 
-        return view('promotions.edit', compact('promotions'));
+        return view('promotions.editpage', compact('promotions'));
     }
 
 
@@ -55,15 +55,15 @@ class PromotionController extends Controller
     {
         return view('promotions.show', compact('promotion'));
     }
-    public function editpage(Promotion $promotion)
-    {
-        return view('promotions.editpage', compact('promotion'));
-    }
-
-    // public function edit(Promotion $promotion)
+    // public function editpage(Promotion $promotion)
     // {
-    //     return view('promotions.edit', compact('promotion'));
+    //     return view('promotions.editpage', compact('promotion'));
     // }
+
+    public function edit(Promotion $promotion)
+    {
+        return view('promotions.edit', compact('promotion'));
+    }
 
     public function update(Request $request, Promotion $promotion)
     {
@@ -89,7 +89,7 @@ class PromotionController extends Controller
 
         $promotion->save();
 
-        return redirect()->route('promotions.index')->with('success', 'Promosi berhasil diperbarui!');
+        return redirect()->route('promotions.editpage')->with('success', 'Promosi berhasil diperbarui!');
     }
 
     public function destroy(Promotion $promotion)
