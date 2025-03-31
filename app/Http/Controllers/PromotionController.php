@@ -12,12 +12,14 @@ class PromotionController extends Controller
         $promotions = Promotion::all();
         return view('promotions.index', compact('promotions'));
     }
+    
+
     public function editpage(Request $request)
     {
         $query = $request->input('query'); // Ambil input pencarian dari form
 
-        $promotions = Promotion::where('title', 'like', "%$query%")
-                            ->orWhere('description', 'like', "%$query%")
+        $promotions = Promotion::where('title', 'ilike', "%$query%")
+                            ->orWhere('description', 'ilike', "%$query%")
                             ->get();
 
         return view('promotions.editpage', compact('promotions'));

@@ -14,7 +14,7 @@
             <div class="flex justify-between items-center py-4">
                 
                 <!-- Logo -->
-                <a href="{{ route('promotions.index') }}" class="text-2xl font-bold text-blue-600 text-decoration-none">
+                <a href="{{ route('promotions.index') }}" class="text-4xl font-bold text-blue-600 text-decoration-none">
                     MyPromo
                 </a>
 
@@ -26,9 +26,9 @@
                 <!-- Navigation -->
                 <nav>
                     <ul id="nav-menu" class="hidden lg:flex md:flex sm:flex space-x-4 mt-2">
-                    <li><a href="{{ route('promotions.index') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Home</a></li>
-                        <li><a href="{{ route('promotions.create') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Tambah Promosi</a></li>
-                        <li><a href="{{ route('promotions.editpage') }}" class="text-gray-700 text-2xl hover:text-blue-500 text-decoration-none">Edit</a></li>
+                    <li><a href="{{ route('promotions.index') }}" class="text-gray-700 text-2xl font-bold hover:text-blue-500 text-decoration-none">Home</a></li>
+                        <li><a href="{{ route('promotions.create') }}" class="text-gray-700 text-2xl font-bold hover:text-blue-500 text-decoration-none">Tambah Promosi</a></li>
+                        <li><a href="{{ route('promotions.editpage') }}" class="text-gray-700 text-2xl font-bold hover:text-blue-500 text-decoration-none">Edit</a></li>
                     </ul>
                 </nav>
             </div>
