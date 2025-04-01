@@ -9,14 +9,14 @@
     <form action="{{ route('promotions.editpage') }}" method="GET" 
         class="w-full max-w-3xl p-10 ">
         <div class="flex items-center space-x-2">
-            <input type="text" name="query" placeholder="Cari promosi..." 
+            <input type="text" name="query" placeholder="Search Promotion..." 
                 class="w-full border px-3 py-2 rounded">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cari</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Search</button>
         </div>
     </form>
 </div>
 
-<h1 class="text-2xl font-bold mb-4">Edit Promosi</h1>
+<h1 class="text-2xl font-bold mb-4">Edit School Promotion</h1>
 
 @if($promotions->isEmpty())
     <p class="text-gray-500 mt-4">Tidak ada hasil ditemukan.</p>
@@ -39,7 +39,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" onclick="return confirm('Yakin ingin menghapus promosi ini?')" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">
-                                    Hapus
+                                    Delete
                                 </button>
                             </form>
                         </div>

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Daftar Promosi')
+@section('title', 'List of Schools')
 
 @section('content')
-<h1 class="text-2xl font-bold mb-4">Daftar Promosi</h1>
+<h1 class="text-2xl font-bold mb-4">List of Schools</h1>
 <div class="container">
     <div class="row">
         @foreach ($promotions as $promotion)

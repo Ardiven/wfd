@@ -16,7 +16,7 @@ class PromotionController extends Controller
 
     public function editpage(Request $request)
     {
-        $query = $request->input('query'); // Ambil input pencarian dari form
+        $query = $request->input('query');
 
         $promotions = Promotion::where('title', 'ilike', "%$query%")
                             ->orWhere('description', 'ilike', "%$query%")
@@ -50,18 +50,13 @@ class PromotionController extends Controller
 
         $promotion->save();
 
-        return redirect()->route('promotions.index')->with('success', 'Promosi berhasil ditambahkan!');
+        return redirect()->route('promotions.index')->with('success', '"Promotion successfully added"!');
     }
 
     public function show(Promotion $promotion)
     {
         return view('promotions.show', compact('promotion'));
     }
-    // public function editpage(Promotion $promotion)
-    // {
-    //     return view('promotions.editpage', compact('promotion'));
-    // }
-
     public function edit(Promotion $promotion)
     {
         return view('promotions.edit', compact('promotion'));
@@ -79,31 +74,26 @@ class PromotionController extends Controller
         $promotion->description = $request->description;
 
         if ($request->hasFile('image')) {
-            // Hapus gambar lama jika ada sebelum menyimpan yang baru
             if ($promotion->image) {
                 Storage::disk('public')->delete($promotion->image);
             }
-
-            // Simpan gambar baru
             $imagePath = $request->file('image')->store('images', 'public');
             $promotion->image = $imagePath;
         }
 
         $promotion->save();
 
-        return redirect()->route('promotions.editpage')->with('success', 'Promosi berhasil diperbarui!');
+        return redirect()->route('promotions.editpage')->with('success', 'Promotion successfully updated!');
     }
 
     public function destroy(Promotion $promotion)
     {
-        // Hapus gambar dari penyimpanan jika ada
         if ($promotion->image) {
             Storage::disk('public')->delete($promotion->image);
         }
 
-        // Hapus data promosi dari database
         $promotion->delete();
 
-        return redirect()->route('promotions.index')->with('success', 'Promosi berhasil dihapus!');
+        return redirect()->route('promotions.index')->with('success', 'Promotion successfully deleted!');
     }
 }

@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Promosi')
+@section('title', 'Add School Promotion')
 
 @section('content')
     <div class="max-w-2xl mx-auto bg-white p-6 rounded shadow-md">
-        <h1 class="text-3xl font-bold text-gray-800 mb-4">Tambah Promosi</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">Add School Promotion</h1>
 
         @if ($errors->any())
             <div class="mb-4 p-4 bg-red-100 text-red-600 rounded">
@@ -21,23 +21,23 @@
             @csrf
 
             <div>
-                <label for="title" class="block font-medium text-gray-700">Judul</label>
+                <label for="title" class="block font-medium text-gray-700">Title</label>
                 <input type="text" id="title" name="title" class="w-full p-2 border border-gray-300 rounded" value="{{ old('title') }}" required>
             </div>
 
             <div>
-                <label for="description" class="block font-medium text-gray-700">Deskripsi</label>
+                <label for="description" class="block font-medium text-gray-700">Description</label>
                 <textarea id="description" name="description" class="w-full p-2 border border-gray-300 rounded" required>{{ old('description') }}</textarea>
             </div>
 
             <div>
-                <label for="image" class="block font-medium text-gray-700">Gambar (opsional)</label>
+                <label for="image" class="block font-medium text-gray-700">Image (Optional)</label>
                 <input type="file" id="image" name="image" class="w-full p-2 border border-gray-300 rounded">
             </div>
 
             <div class="flex justify-between items-center">
                 <a href="{{ route('promotions.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-decoration-none">Kembali</a>
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Simpan</button>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Submit</button>
             </div>
         </form>
     </div>
